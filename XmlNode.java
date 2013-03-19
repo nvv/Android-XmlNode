@@ -128,15 +128,11 @@ public class XmlNode {
             return "";
         }
 
-        if (serialize(serializer)) {
-            return writer.toString();
-        } else {
-            return "";
-        }
+        return serialize(serializer) ? writer.toString() : "";
     }
 
     public void setName(String name) {
-        this.mName = name;
+        mName = name;
     }
 
     public String getName() {
@@ -144,7 +140,7 @@ public class XmlNode {
     }
 
     public void setValue(String value) {
-        this.mValue = value;
+        mValue = value;
     }
 
     public String getValue() {
@@ -155,7 +151,7 @@ public class XmlNode {
         if (null != parent) {
             parent.addChild(this);
         } else {
-            this.mParent = null;
+            mParent = null;
         }
     }
 
